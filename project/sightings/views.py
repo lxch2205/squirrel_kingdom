@@ -7,5 +7,11 @@ def catalog(request):
     context = {
         'squirrels' : squirrels.order_by('id'),
     }
-    return render
+    return render(request,'sightings/catalog.html',context)
+
+def add_squirrel(request):
+    if request.method == 'POST':
+        form = 
+
+
 # Create your views here.
