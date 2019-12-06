@@ -15,7 +15,7 @@ def add_squirrel(request):
         #check data with form
         if form.is_valid():
             form.save()
-            return redirect(f'/sightings/
+            return redirect(f'/sightings/add')
 
 
 # Create your views here.
