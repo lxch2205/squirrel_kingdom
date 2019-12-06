@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
-from django.views.generic import UpdateView
+from django.template import loader
+from django.db.models import Count, Q
+
 from .models import Squirrel
 from .forms import SquirrelForm
 
@@ -17,14 +19,24 @@ def all_squirrels(request):
 def add_squirrel(request):
     if request.method == 'POST':
         form = SquirrelForm(request.POST)
-        #check data with form
         if form.is_valid():
-            x = form['id'].value()
             form.save()
-            return redirect(f'/sightings/{x}')
+            return redirect(f'/sightings/lists/')
     else:
         form = SquirrelForm()
-        return render(request, 'sightings/add.html',{'form': form})
+
+    context = {
+        'form': form
+    }
+
+    return render(request, 'sightings/add.html', context)
+
+def squirrel_details(request, squirrel_id):
+    data = Squirrel.objects.get(squirrel_id=squirrel_id)
+    context = {
+        'data': data
+    }
+    return render(request, 'sightings/detail.html', context)
 
 
 # Create your views here.
