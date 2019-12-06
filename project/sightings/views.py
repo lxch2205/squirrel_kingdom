@@ -8,4 +8,5 @@ def catalog(request):
         'squirrels' : squirrels.order_by('id'),
     }
     return render
+
 # Create your views here.
