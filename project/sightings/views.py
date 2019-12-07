@@ -38,5 +38,8 @@ def squirrel_details(request, squirrel_id):
     }
     return render(request, 'sightings/detail.html', context)
 
+def stats(request):
+    dataset = Squirrel.objects \
+        .values('shift')\
+        .annotate(
 
-# Create your views here.
