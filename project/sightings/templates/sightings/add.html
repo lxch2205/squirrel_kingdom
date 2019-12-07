@@ -1,7 +1,11 @@
 <!doctype html>
 <html>
+  <head>
+    <title>Add a New Squirrel</title>
+  </head>
+
   <body>
-    <form methodd="post">
+    <form method="post">
       {% csrf_token %}
 
       {{ form.as_p }}

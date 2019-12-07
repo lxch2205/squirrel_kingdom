@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Squirrel List</title>
+  </head>
+
+  <body>
+    <ul>
+      <a href="/sightings/sightings/add>">Add a New Sighting</a><br/>
+      <a href="/sightings/sightings/stats>">View Stats</a><br/>
+          {% for item in squirrel_id %}
+	      <li>
+		  <a href="/sightings/sightings/{{ item.sid }}>">{{ item.sid }}</a>
+	      </li>
+	  {% endfor %}
+    </ul>
+  </body>
+</html>
