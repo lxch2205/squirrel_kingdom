@@ -3,6 +3,8 @@ from django.shortcuts import render, redirect
 from .models import Squirrel
 from .forms import SquirrelForm
 
+import random
+
 
 def index(request):
     return render(request, 'sightings/index.html')
@@ -38,10 +40,5 @@ def stats(request):
     return render(request, 'sightings/stats.html', {'dataset': datasest})
 
 def map(request):
-    latlong = list()
-    for i in Squirrel.objects.all():
-        loc_dict = {}
-        loc_dict['latitude']=i.latitude
-        loc_dict['longtitude']=i.longitude
-        latlong.append(loc_dict)
-    return render(request, 'map/map.html', {'latlong':latlong})
+    sightings = random.sample(list(Squirrel.objects.all()),100)
+    return render(request, 'map/map.html',{'sightings':sightings})
