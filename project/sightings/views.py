@@ -35,3 +35,4 @@ def stats(request):
         .values('shift')\
         .annotate(
 
+
