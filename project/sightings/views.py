@@ -35,7 +35,7 @@ def stats(request):
     dataset = Squirrel.objects \
         .values('shift') \
         .annotate(running_count=Count('shift', filter=Q(running=True)),
-                not_running count=Count('shift', filter=Q(running=False))) \
+                not_running_count=Count('shift', filter=Q(running=False))) \
         .order_by('shift')
     return render(request, 'sightings/stats.html', {'dataset': datasest})
 
