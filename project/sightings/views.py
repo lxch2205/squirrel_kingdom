@@ -29,14 +29,6 @@ def add_squirrel(request):
         return redirect(f'/sightings/list/')
     return render(request, 'sightings/add.html')
 
-def stats(request):
-    dataset = Squirrel.objects \
-        .values('shift') \
-        .annotate(running_count=Count('shift', filter=Q(running=True)),
-                not_running count=Count('shift', filter=Q(running=False))) \
-        .order_by('shift')
-    return render(request, 'sightings/stats.html', {'dataset': datasest})
-
 def map(request):
     latlong = list()
     for i in Squirrel.objects.all():
@@ -45,3 +37,45 @@ def map(request):
         loc_dict['longtitude']=i.longitude
         latlong.append(loc_dict)
     return render(request, 'map/map.html', {'latlong':latlong})
+
+def stats(request):
+
+    total_squirrels = Squirrel.objects.count()
+    gray = Squirrel.objects.filter(color='Gray').count()
+    cinnamon = Squirrel.objects.filter(color='Cinnamon').count()
+    black = Squirrel.objects.filter(color='Black').count()
+    adult = Squirrel.objects.filter(age='Adult').count()
+    juvenile = Squirrel.objects.filter(age='Juvenile').count()
+    above_ground = Squirrel.objects.filter(location='Above Ground').count()
+    ground_plane = Squirrel.objects.filter(location='Ground Plane').count()
+    approaches = Squirrel.objects.filter(approaches='Approaches').count()
+    indifferent = Squirrel.objects.filter(indifferent='Indifferent').count()
+    runs_from = Squirrel.objects.filter(runs_from='Runs from').count()
+    running_true = Squirrel.objects.filter(running=True).count()
+    chasing_true = Squirrel.objects.filter(chasing=True).count()  
+    climbing_true = Squirrel.objects.filter(climbing=True).count()
+    eating_true = Squirrel.objects.filter(eating=True).count()
+    foraging_true = Squirrel.objects.filter(foraging=True).count()
+    #other_activities_true = Squirrel.objects.filter(other_activities=True).count()
+
+    context = {
+            'total_squirrels' : total_sightings,
+            'gray' :gray,
+            'cinnamon' : cinnamon
+            'black' : black
+            'adult' : adult
+            'juvenile' : juvenile
+            'above_ground' : above_ground
+            'ground_plane' : ground_plane
+            'approaches' : approaches
+            'indifferent' : indifferent
+            'runs_from' : run_from
+            'running_true' : running
+            'chasing_true' : chasing
+            'climbing_true' : climbing
+            'eating_true' : eating
+            'foraging_true' : foraging
+            }
+    return render(request, 'sightings.status.html', context)
+
+
