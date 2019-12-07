@@ -44,4 +44,4 @@ def map(request):
         loc_dict['latitude']=i.latitude
         loc_dict['longtitude']=i.longitude
         latlong.append(loc_dict)
-    return render(request, 'sightings/map.html', {'latlong':latlong})
+    return render(request, 'map/map.html', {'latlong':latlong})
