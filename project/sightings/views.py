@@ -29,10 +29,19 @@ def add_squirrel(request):
         return redirect(f'/sightings/list/')
     return render(request, 'sightings/add.html')
 
-
 def stats(request):
     dataset = Squirrel.objects \
-        .values('shift')\
-        .annotate(
+        .values('shift') \
+        .annotate(running_count=Count('shift', filter=Q(running=True)),
+                not_running count=Count('shift', filter=Q(running=False))) \
+        .order_by('shift')
+    return render(request, 'sightings/stats.html', {'dataset': datasest})
 
-
+def map(request):
+    latlong = list()
+    for i in Squirrel.objects.all():
+        loc_dict = {}
+        loc_dict['latitude']=i.latitude
+        loc_dict['longtitude']=i.longitude
+        latlong.append(loc_dict)
+    return render(request, 'sightings/map.html', {'latlong':latlong})
