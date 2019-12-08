@@ -64,20 +64,20 @@ def stats(request):
     context = {
             'total_squirrels' : total_sightings,
             'gray' :gray,
-            'cinnamon' : cinnamon
-            'black' : black
-            'adult' : adult
-            'juvenile' : juvenile
-            'above_ground' : above_ground
-            'ground_plane' : ground_plane
-            'approaches' : approaches
-            'indifferent' : indifferent
-            'runs_from' : run_from
-            'running_true' : running
-            'chasing_true' : chasing
-            'climbing_true' : climbing
-            'eating_true' : eating
-            'foraging_true' : foraging
+            'cinnamon' : cinnamon,
+            'black' : black,
+            'adult' : adult,
+            'juvenile' : juvenile,
+            'above_ground' : above_ground,
+            'ground_plane' : ground_plane,
+            'approaches' : approaches,
+            'indifferent' : indifferent,
+            'runs_from' : run_from,
+            'running_true' : running,
+            'chasing_true' : chasing,
+            'climbing_true' : climbing,
+            'eating_true' : eating,
+            'foraging_true' : foraging,
             }
     return render(request, 'sightings.status.html', context)
 
