@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-
+from django.http import HttpResponse
 from .models import Squirrel
 from .forms import SquirrelForm
 
@@ -45,42 +45,40 @@ def map(request):
     return render(request, 'map/map.html', {'sightings':sightings})
 
 def stats(request):
+                total_squirrels = Squirrel.objects.count(),
+                gray_count = Squirrel.objects.filter(color='Gray').count(),
+                cinnamon_count = Squirrel.objects.filter(color='Cinnamon').count(),
+                black_count = Squirrel.objects.filter(color='Black').count(),
+                adult_count = Squirrel.objects.filter(age='Adult').count(),
+                juvenile_count = Squirrel.objects.filter(age='Juvenile').count(),
+                above_ground_count = Squirrel.objects.filter(location='Above Ground').count(),
+                ground_plane_count = Squirrel.objects.filter(location='Ground Plane').count(),
+                approaches_count = Squirrel.objects.filter(approaches='Approaches').count(),
+                indifferent_count = Squirrel.objects.filter(indifferent='Indifferent').count(),
+                runs_from_count = Squirrel.objects.filter(runs_from='Runs from').count(),
+                running_true_count = Squirrel.objects.filter(running=True).count(),
+                chasing_true_count = Squirrel.objects.filter(chasing=True).count(), 
+                climbing_true_count = Squirrel.objects.filter(climbing=True).count(),
+                eating_true_count = Squirrel.objects.filter(eating=True).count(),
+                foraging_true_count = Squirrel.objects.filter(foraging=True).count(),
 
-    total_squirrels = Squirrel.objects.count()
-    gray = Squirrel.objects.filter(color='Gray').count()
-    cinnamon = Squirrel.objects.filter(color='Cinnamon').count()
-    black = Squirrel.objects.filter(color='Black').count()
-    adult = Squirrel.objects.filter(age='Adult').count()
-    juvenile = Squirrel.objects.filter(age='Juvenile').count()
-    above_ground = Squirrel.objects.filter(location='Above Ground').count()
-    ground_plane = Squirrel.objects.filter(location='Ground Plane').count()
-    approaches = Squirrel.objects.filter(approaches='Approaches').count()
-    indifferent = Squirrel.objects.filter(indifferent='Indifferent').count()
-    runs_from = Squirrel.objects.filter(runs_from='Runs from').count()
-    running_true = Squirrel.objects.filter(running=True).count()
-    chasing_true = Squirrel.objects.filter(chasing=True).count()  
-    climbing_true = Squirrel.objects.filter(climbing=True).count()
-    eating_true = Squirrel.objects.filter(eating=True).count()
-    foraging_true = Squirrel.objects.filter(foraging=True).count()
-    #other_activities_true = Squirrel.objects.filter(other_activities=True).count()
-
-    context = {
-            'total_squirrels' : total_sightings,
-            'gray' :gray,
-            'cinnamon' : cinnamon,
-            'black' : black,
-            'adult' : adult,
-            'juvenile' : juvenile,
-            'above_ground' : above_ground,
-            'ground_plane' : ground_plane,
-            'approaches' : approaches,
-            'indifferent' : indifferent,
-            'runs_from' : run_from,
-            'running_true' : running,
-            'chasing_true' : chasing,
-            'climbing_true' : climbing,
-            'eating_true' : eating,
-            'foraging_true' : foraging,
-            }
-    return render(request, 'sightings/status.html', context)
+                context ={
+                    'total_squirrels':total_squirrels,
+                    'gray_count':gray_count,
+                    'cinnamon_count':cinnamon_count,
+                    'black_count':black_count,
+                    'adult_count':adult_count,
+                    'juvenile_count':juvenile_count,
+                    'above_ground_count':above_ground_count,
+                    'ground_plane_count':ground_plane_count,
+                    'approaches_count':approaches_count,
+                    'indifferent_count':indifferent_count,
+                    'runs_from_count':runs_from_count,
+                    'running_true_count':running_true_count,
+                    'chasing_true_count':chasing_true_count,
+                    'climbing_true_count':climbing_true_count,
+                    'eating_true_count':eating_true_count,
+                    'foraging_true_count':foraging_true_count,
+                    }
+        return render(request, 'sightings/status.html', context)
 

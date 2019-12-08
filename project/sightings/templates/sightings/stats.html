@@ -1,3 +1,4 @@
+{% block content%}
 <html>
 	<head>
 		<meta charset = "utf-8">
@@ -15,7 +16,7 @@
 					text:'Central Park Squirrel Data Summary'
 				},
 				subtitle:{
-					text:'Total: ?'
+					text:'Total: {{total_squirrels}}'
 				},
 				xAxis:{
 					catagories:['color','age','location','attitude','activity']
@@ -63,66 +64,66 @@
 				series:[
 				{
 					name:'gray',
-					data:[100]
+					data:[{{gray}}]
 				},
 				{
 					name:'black',
-					data:[158]
+					data:[{{black}}]
 				},
 				{
 					name:'cinnamon',
-					data:[200]
+					data:[{{cinnamon}}]
 				{
 					name:'adult',
-					data:[0,178]
+					data:[0,{{adult}}]
 				},
 				{
 					name:'juvenile',
-					data:[0,256]
+					data:[0,{{juvenile}}]
 				},
 				{
 					name:'ground plane',
-					data:[0,0,159]
+					data:[0,0,{{ground_plane}}]
 				},
 				{
 					name:'above ground',
-					data:[0,0,206]
+					data:[0,0,{{above_ground}}]
 				},
 				{
 					name:'approaches',
-					data:[0,0,0,167]
+					data:[0,0,0,{{approaches}}]
 				},
 				{
 					name:'indifferent',
-					data:[0,0,0,39]
+					data:[0,0,0,{{indifferent}}]
 				},
 				{
 					name:'runs_from',
-					data:[0,0,0,206]
+					data:[0,0,0,{{runs_from}}]
 				},
 				{
 					name:'running',
-					data:[0,0,0,0,156]
+					data:[0,0,0,0,{{running}}]
 				},
 				{
 					name:'chasing',
-					data:[0,0,0,0,37]
+					data:[0,0,0,0,{{chasing}}]
 				},
 				{
 					name:'climbing',
-					data:[0,0,0,0,238]
+					data:[0,0,0,0,{{climbing}}]
 				},
 				{
 					name:'eating',
-					data:[0,0,0,0,200]
+					data:[0,0,0,0,{{eating}}]
 				},
 				{
 					name:'foraging',
-					data:[0,0,0,0,267]
+					data:[0,0,0,0,{{foraging}}]
 				},
 				{
 					name:'other activities',
-					data:[0,0,0,0,123]
+					data:[0,0,0,0,{{activities}}]
 				}]
 		};
 		var chart = Highcharts.chart('container',options);
@@ -130,5 +131,5 @@
 	</body>
 </html>
 
-
+{% endblock %}
 
