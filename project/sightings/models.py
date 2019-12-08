@@ -1,8 +1,8 @@
 from django.db import models
 
-from django.utils.translation import gettect as _
+from django.utils.translation import gettext as _
 
-class Squirrel(models.Models):
+class Squirrel(models.Model):
     id = models.CharField(
         help_text = _('Unique Squirrel ID'),
         max_length = 255,

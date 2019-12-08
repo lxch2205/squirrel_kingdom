@@ -3,16 +3,19 @@ from django.shortcuts import render, redirect
 from .models import Squirrel
 from .forms import SquirrelForm
 
+import random
+
 
 def index(request):
     return render(request, 'sightings/index.html')
 
 def all_squirrels(request):
-    squirrel_list = Squirrel.objects.order_by('id')
-    context = {
-        'squirrels_list' : squirrel_list
-    }
-    return render(request, 'sightings/list.html', context)
+    squirrel_ids = list()
+    for i in Squirrel.objects.all():
+        i_dict = {}
+        i_dict['id'] = i.id
+        squirrel_ids.append(i_dict)
+    return render(request, 'sightings/list.html', {'squirrel_ids':squirrel_ids})
 
 def squirrel_details(request, squirrel_id):
     data = Squirrel.objects.get(squirrel_id=squirrel_id)
@@ -77,5 +80,4 @@ def stats(request):
             'foraging_true' : foraging
             }
     return render(request, 'sightings.status.html', context)
-
 
