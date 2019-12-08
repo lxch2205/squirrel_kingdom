@@ -1,0 +1,134 @@
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title>Squirrel Kingdom</title>
+	</head>
+	<body>
+		<div id="container"></div>
+		<script src="http://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>
+		<script>
+			var options = {
+				chart:{
+					type:'bar'
+				},
+				title:{
+					text:'Central Park Squirrel Data Summary'
+				},
+				subtitle:{
+					text:'Total: ?'
+				},
+				xAxis:{
+					catagories:['color','age','location','attitude','activity']
+					title:{
+						null
+					}
+				},
+				yAxis:{
+					min:0,
+					title:{
+						text:population',
+						align:'hign'
+					},
+					labels:{
+						overflow:'justify'
+					}
+				},
+				plotOptions:{
+					bar:{
+						dataLabels:{
+							enabled:true
+						}
+					},
+					series:{
+						stacking:'nomal'
+					}
+				},
+				legend:{
+					layout:'vectical',
+					align:'right',
+					verticalAlign:'top',
+					x:-40,
+					y:100,
+					floating:true,
+					borderWidth:1,
+
+					backgroundColor:(
+						(Highcharts.theme && Highcharts.theme.legendBackgroundColor)
+						||'#FFFFFF'),
+					shadow:true
+				},
+				credits:{
+					enabled:false
+				},
+				series:[
+				{
+					name:'gray',
+					data:[100]
+				},
+				{
+					name:'black',
+					data:[158]
+				},
+				{
+					name:'cinnamon',
+					data:[200]
+				{
+					name:'adult',
+					data:[0,178]
+				},
+				{
+					name:'juvenile',
+					data:[0,256]
+				},
+				{
+					name:'ground plane',
+					data:[0,0,159]
+				},
+				{
+					name:'above ground',
+					data:[0,0,206]
+				},
+				{
+					name:'approaches',
+					data:[0,0,0,167]
+				},
+				{
+					name:'indifferent',
+					data:[0,0,0,39]
+				},
+				{
+					name:'runs_from',
+					data:[0,0,0,206]
+				},
+				{
+					name:'running',
+					data:[0,0,0,0,156]
+				},
+				{
+					name:'chasing',
+					data:[0,0,0,0,37]
+				},
+				{
+					name:'climbing',
+					data:[0,0,0,0,238]
+				},
+				{
+					name:'eating',
+					data:[0,0,0,0,200]
+				},
+				{
+					name:'foraging',
+					data:[0,0,0,0,267]
+				},
+				{
+					name:'other activities',
+					data:[0,0,0,0,123]
+				}]
+		};
+		var chart = Highcharts.chart('container',options);
+		</script>
+	</body>
+</html>
+
+
+
