@@ -1,10 +1,10 @@
 <html>
   <head>
-    <title>{{ data.squirrel_id }}</title>
+    <title>{{ data.id }}</title>
   </head>
 
-  <body>
-    <h2>{{ data.squirrel_id }}</h2>
+  <body>	  
+    <h2>{{ data.id }}</h2>
     <form action="" method""="post">
       {% csrf_token %}
         <p>Latitude: <input type="text" name="latitude" value={{ data.latitude }}></p>

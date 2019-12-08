@@ -17,25 +17,28 @@ def all_squirrels(request):
         squirrel_ids.append(i_dict)
     return render(request, 'sightings/list.html', {'squirrel_ids':squirrel_ids})
 
-def squirrel_details(request, squirrel_id):
-    data = Squirrel.objects.get(squirrel_id=squirrel_id)
-    context = {
-        'data': data
-    }
-    return render(request, 'sightings/detail.html', context)
-
 def add_squirrel(request):
     if request.method == 'POST':
         form = SquirrelForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect(f'/sightings/list/')
+        return redirect(f'/sightings/list')
     else:
         form = SquirrelForm()
     context = {
         'form': form,
     }
     return render(request, 'sightings/add.html', context)
+
+def squirrel_details(request, id):
+    try:
+        data = Squirrel.objects.get(id=id)
+    except Squirrel.DoesNotExist:
+        data = None
+    context = {
+        'data': data
+    }
+    return render(request, 'sightings/detail.html', context)
 
 def map(request):
     sightings = random.sample(list(Squirrel.objects.all()), 100)
@@ -79,5 +82,5 @@ def stats(request):
             'eating_true' : eating,
             'foraging_true' : foraging,
             }
-    return render(request, 'sightings.status.html', context)
+    return render(request, 'sightings/status.html', context)
 
