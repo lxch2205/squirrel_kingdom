@@ -1,17 +1,14 @@
 <html>
-  <head>
-    <title>Squirrel List</title>
-  </head>
-
   <body>
-    <ul>
+      <h1><b>Squirrel List</b></h1>
       <a href="/sightings/sightings/add>">Add a New Sighting</a><br/>
       <a href="/sightings/sightings/stats>">View Stats</a><br/>
-          {% for item in squirrel_id %}
+      <ul>
+          {% for item in squirrel_ids %}
 	      <li>
-		  <a href="/sightings/sightings/{{ item.sid }}>">{{ item.sid }}</a>
+		  <a href="/sightings/sightings/{{ item.id }}>">{{ item.id }}</a>
 	      </li>
 	  {% endfor %}
-    </ul>
+      </ul>
   </body>
 </html>
