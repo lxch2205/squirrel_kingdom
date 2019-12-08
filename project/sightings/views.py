@@ -29,17 +29,17 @@ def add_squirrel(request):
         form = SquirrelForm(request.POST)
         if form.is_valid():
             form.save()
-        return redirect(f'/sightings/list/')
-    return render(request, 'sightings/add.html')
+            return redirect(f'/sightings/list/')
+    else:
+        form = SquirrelForm()
+    context = {
+        'form': form,
+    }
+    return render(request, 'sightings/add.html', context)
 
 def map(request):
-    latlong = list()
-    for i in Squirrel.objects.all():
-        loc_dict = {}
-        loc_dict['latitude']=i.latitude
-        loc_dict['longtitude']=i.longitude
-        latlong.append(loc_dict)
-    return render(request, 'map/map.html', {'latlong':latlong})
+    sightings = random.sample(list(Squirrel.objects.all()), 100)
+    return render(request, 'map/map.html', {'sightings':sightings})
 
 def stats(request):
 

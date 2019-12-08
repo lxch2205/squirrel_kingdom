@@ -5,12 +5,15 @@
   </head>
 
   <body>
-    <form method="post">
-      {% csrf_token %}
+      <h1><b>Fill in the Form to Add a New Squirrel</b></h1>
+      <form method="POST">
+          {% csrf_token %}
 
-      {{ form.as_p }}
-      <br>
-      <input type="submit" name="Submit">
-    </form>
+          {{ form.as_p }}
+          <br>
+          <input type="submit" name="Submit">
+          <br>
+	  <a href='sightings/sightings/'>Back to the Squirrel List</a>
+      </form>
   </body>
 </html>
