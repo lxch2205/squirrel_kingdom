@@ -1,96 +1,98 @@
 <html>
    <head>
-      <title>Squirrel Kingdom</titlei>
-      <script src="http://code.highcharts.com/highcharts.js"></script>
-      <script src="http://code.highcharts.com/modules/exporting.js"></script>
+      <title>Highcharts Tutorial</title>
+      <script src = "http://code.highcharts.com/modules/exporting.js">
+      </script>
+      <script src = "https://code.highcharts.com/highcharts.js"></script>  
    </head>
    
    <body>
-      <div id="container" ></div>
+      <div id = "container" style = "width: 550px; height: 400px; margin: 0 auto"></div>
       <script language = "JavaScript">
-	      $(function () {
-    $('#container').highcharts({
-        chart: {
-            type: 'bar'
-        },
-        title: {
-            text: 'Central Park Squirrel Data Summary'
-        },
-        xAxis: [{
-            categories: ['Color','Age','Location','Attitude','Activity']
-        },{
-            linkedTo: 0
-        },{
-            linkedTo: 0,
-            opposite: true
-        }],
-        yAxis: [{
-            min: 0,
-            title: {
-                text: 'population'
-            }
-        },{
-            linkedTo: 0
-        },{
-            linkedTo: 0,
-            opposite: true
-        }],
-        legend: {
-            reversed: true
-        },
-        plotOptions: {
-            series: {
-                stacking: 'normal'
-            }
-        },
-        series: [{
-            name: 'gray',
-            data: [300]
-        }, {
-            name: 'cinnamon',
-            data: [250]
-        }, {
-            name: 'black',
-            data: [234]
-        }, {
-            name:'adult',
-            data: [0,256]
-        }, {
-            name:'juvenile',
-            data: [0,157]
-        }, {
-            name:'ground_plane',
-            data: [0,0,148]
-        }, {
-            name:'above_ground',
-            data: [0,0,267]
-        }, {
-            name:'approaches',
-            data: [0,0,0,169]
-        }, {
-            name:'indifferent',
-            data: [0,0,0,234]
-        }, {
-            name:'runs from',
-            data: [0,0,0,89]
-        }, {
-            name:'running',
-            data: [0,0,0,0,235]
-        }, {
-            name:'chasing',
-            data: [0,0,0,0,123]
-        }, {
-            name:'climbing',
-            data: [0,0,0,0,66]
-        }, {
-            name:'eating',
-            data: [0,0,0,0,334]
-        }, {
-            name:'foraging',
-            data: [0,0,0,0,223]
-        }]
-    });
-});
+         $(document).ready(function() {  
+            var chart = {
+               type: 'bar'
+            };
+            var title = {
+               text: 'Historic World Population by Region'   
+            };
+            var subtitle = {
+               text: 'Source: Wikipedia.org'  
+            };
+            var xAxis = {
+               categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania'],
+               title: {
+                  text: null
+               }
+            };
+            var yAxis = {
+               min: 0,
+               title: {
+                  text: 'Population (millions)',
+                  align: 'high'
+               },
+               labels: {
+                  overflow: 'justify'
+               }
+            };
+            var tooltip = {
+               valueSuffix: ' millions'
+            };
+            var plotOptions = {
+               bar: {
+                  dataLabels: {
+                     enabled: true
+                  }
+               },
+               series: {
+                  stacking: 'normal'
+               }
+            };
+            var legend = {
+               layout: 'vertical',
+               align: 'right',
+               verticalAlign: 'top',
+               x: -40,
+               y: 100,
+               floating: true,
+               borderWidth: 1,
+               
+               backgroundColor: (
+                  (Highcharts.theme && Highcharts.theme.legendBackgroundColor)
+                  || '#FFFFFF'),
+               shadow: true
+            };
+            var credits = {
+               enabled: false
+            };
+            var series = [
+               {
+                  name: 'Year 1800',
+                  data: [107, 31, 635, 203, 2]
+               }, 
+               {
+                  name: 'Year 1900',
+                  data: [133, 156, 947, 408, 6]
+               }, 
+               {
+                  name: 'Year 2008',
+                  data: [973, 914, 4054, 732, 34]      
+               }
+            ];
+      
+            var json = {};   
+            json.chart = chart; 
+            json.title = title;   
+            json.subtitle = subtitle; 
+            json.tooltip = tooltip;
+            json.xAxis = xAxis;
+            json.yAxis = yAxis;  
+            json.series = series;
+            json.plotOptions = plotOptions;
+            json.legend = legend;
+            json.credits = credits;
+            $('#container').highcharts(json);
+         });
       </script>
    </body>
    
