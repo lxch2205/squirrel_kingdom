@@ -1,5 +1,5 @@
 # squirrel_kingdom
-Group Name: little new sheep  
+Group Name: Little New Sheep  
 Group Number: project67, section2  
 UNIs: [jm4994, lc3464]  
 
