@@ -1,6 +1,6 @@
 # squirrel_kingdom
 Group Name: little new sheep  
-Group Number: project67, section2 
+Group Number: project67, section2  
 UNIs: [jm4994, lc3464]  
 
 Link: https://liuxins-project-of-e4501.appspot.com/sightings/
