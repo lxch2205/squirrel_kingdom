@@ -65,7 +65,7 @@
             var series = [
                {
                   name: 'Gray',
-		  data: [{%for item in context %}{{context.gray_count}}{% if not forloop.last %}, {%endif %}{% endfor %},null]
+		  data: [{{views.gray_count}},null]
                }, 
                {
                   name: 'Cinnamon',
