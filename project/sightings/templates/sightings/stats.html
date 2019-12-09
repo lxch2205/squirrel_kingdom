@@ -1,13 +1,15 @@
 <html>
    <head>
       <title>Squirrel Kingdom</title>
+      <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+      </script>
       <script src = "https://code.highcharts.com/highcharts.js"></script>  
    </head>
    
    <body>
       <div id = "container" ></div>
       <script>
-         Highcharts.chart('container', {  
+         $(document).ready(function() {  
             chart = {
                type: 'bar'
             },
@@ -134,7 +136,7 @@
             json.plotOptions = plotOptions;
             json.legend = legend;
             json.credits = credits;
-            ('#container').highcharts(json);
+            $('#container').highcharts(json);
          });
       </script>
    </body>
