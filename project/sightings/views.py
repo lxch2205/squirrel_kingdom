@@ -44,7 +44,7 @@ def map(request):
     sightings = random.sample(list(Squirrel.objects.all()), 100)
     return render(request, 'map/map.html', {'sightings':sightings})
 
-def stats(request)
+def stats(request):
     gray_count = Squirrel.objects.filter(color='Gray').count(),
     cinnamon_count = Squirrel.objects.filter(color='Cinnamon').count(),
     black_count = Squirrel.objects.filter(color='Black').count(),
