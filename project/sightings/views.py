@@ -64,6 +64,5 @@ def stats(request):
     
     context =[gray_count,cinnamon_count,black_count,adult_count,juvenile_count,above_ground_count,ground_plane_count,approaches_count,indifferent_count,runs_from_count,running_true_count,chasing_true_count,climbing_true_count,eating_true_count,foraging_true_count]
 
-    context = json.dumps(context)
-    return render(request, 'sightings/stats.html', locals())
+    return render(request, 'sightings/stats.html', {"list":serializers.serialize('json',context)})
 
