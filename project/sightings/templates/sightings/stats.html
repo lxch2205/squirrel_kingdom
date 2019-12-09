@@ -10,19 +10,19 @@
       <div id = "container" ></div>
       <script language = "JavaScript">
          $(document).ready(function() {  
-            chart = {
+            var chart = {
                type: 'bar'
             },
-            title = {
+            var title = {
                text: 'Central Park Squirrel Data Summary'   
             },  
-            xAxis = {
+            var xAxis = {
                categories: ['color','age','location','attitude','activity'],
                title: {
                   text: null
                }
             },
-            yAxis = {
+            var yAxis = {
                min: 0,
                title: {
                   text: 'Population',
@@ -32,10 +32,10 @@
                   overflow: 'justify'
                }
             },
-            tooltip = {
+            var tooltip = {
                valueSuffix: 'squirrels'
             },
-            plotOptions = {
+            var plotOptions = {
                bar: {
                   dataLabels: {
                      enabled: true
@@ -45,7 +45,7 @@
                   stacking: 'normal'
                }
             },
-            legend = {
+            var legend = {
                layout: 'vertical',
                align: 'right',
                verticalAlign: 'top',
@@ -59,10 +59,10 @@
                   || '#FFFFFF'),
                shadow: true
             },
-            credits = {
+            var credits = {
                enabled: false
             },
-            series = [
+            var series = [
                {
                   name: 'gray',
                   data: [107]
@@ -125,7 +125,7 @@
                }
             ];
       
-            json = {};   
+            var json = {};   
             json.chart = chart; 
             json.title = title;   
             json.subtitle = subtitle; 
