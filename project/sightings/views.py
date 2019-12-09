@@ -23,7 +23,7 @@ def add_squirrel(request):
         form = SquirrelForm(request.POST)
         if form.is_valid():
             form.save()
-        return redirect(f'/sightings/list')
+        return redirect(f'/sightings/sightings')
     else:
         form = SquirrelForm()
     context = {
@@ -37,9 +37,20 @@ def squirrel_details(request, id):
     except Squirrel.DoesNotExist:
         data = None
     context = {
-        'data': data
-    }
+            'data':data,
+            }
     return render(request, 'sightings/detail.html', context)
+    if request.method == 'POST':
+        form = SquirrelForm(request.POST, instance=data)
+        if form.is_valid():
+            form.save()
+            return redirect(f'/sightings/{id}')
+    else:
+        form = SquirrelForm(instance=data)
+        context = {
+            'form': form,
+            }
+        return render(request, 'sightings/detail.html', context)
 
 def map(request):
     sightings = random.sample(list(Squirrel.objects.all()), 100)
