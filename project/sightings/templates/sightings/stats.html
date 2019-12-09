@@ -1,125 +1,54 @@
 <html>
-	<head>
-		<meta charset = "utf-8">
-		<title>Squirrel Kingdom</title>
-	</head>
-	<body>
-		<div id="container"></div>
-		<script src="http://code.highcharts.com/highcharts.src.js"></script>
-		<script>
-			Highcharts.chart('container',{
-				chart:{
-					type:'bar'
-				},
-				title:{
-					text:'Central Park Squirrel Data Summary'
-				},
-				subtitle:{
-					text:'Total: {{total_squirrels}}'
-				},
-				xAxis:{
-					categories:['color','age','location','attitude','activity']
-					title:{
-						text: null
-					}
-				},
-				yAxis:{
-					min:0,
-					title:{
-						text:population',
-						align:'high'
-					},
-					labels:{
-						overflow:'justify'
-					}
-				},
-				plotOptions:{
-					bar:{
-						dataLabels:{
-							enabled:true
-						}
-					},
-					series:{
-						stacking:'nomal'
-					}
-				},
-				legend:{
-					layout:'vectical',
-					align:'right',
-					verticalAlign:'top',
-					x:-40,
-					y:100,
-					floating:true,
-					borderWidth:1,
-					backgroundColor:(
-						(Highcharts.theme && Highcharts.theme.legendBackgroundColor)
-						||'#FFFFFF'),
-					shadow:true
-				},
-				credits:{
-					enabled:false
-				},
-				series:[
-				{
-					name:'gray',
-					data:[300] #{{gray_count}}]
-				},
-				{
-					name:'black',
-					data:[267] #{{black_count}}]
-				},
-				{
-					name:'cinnamon',
-					data:[159] #{{cinnamon_count}}]
-				{
-					name:'adult',
-					data:[0,245] #{{adult_count}}]
-				},
-				{
-					name:'juvenile',
-					data:[0,300] #{{juvenile_count}}]
-				},
-				{
-					name:'ground plane',
-					data:[0,0,256] #{{ground_plane_count}}]
-				},
-				{
-					name:'above ground',
-					data:[0,0,244] #{{above_ground_count}}]
-				},
-				{
-					name:'approaches',
-					data:[0,0,0,123] #{{approaches_count}}]
-				},
-				{
-					name:'indifferent',
-					data:[0,0,0,234] #{{indifferent_count}}]
-				},
-				{
-					name:'runs_from',
-					data:[0,0,0,156] #{{runs_from_count}}]
-				},
-				{
-					name:'running',
-					data:[0,0,0,0,234] #{{running_true_count}}]
-				},
-				{
-					name:'chasing',
-					data:[0,0,0,0,123] #{{chasing_true_count}}]
-				},
-				{
-					name:'climbing',
-					data:[0,0,0,0,234] #{{climbing_true_count}}]
-				},
-				{
-					name:'eating',
-					data:[0,0,0,0,256] #{{eating_true_count}}]
-				},
-				{
-					name:'foraging',
-					data:[0,0,0,0,156] #{{foraging_true_count}}]
-				}]
-		};
-		</script>
-	</body>
+<head>
+  <meta charset="utf-8">
+  <title>Squirrel General Stats</title>
+</head>
+<body>
+  <div id="container"></div>
+  <script src="https://code.highcharts.com/highcharts.src.js"></script>
+  <script>
+    Highcharts.chart('container', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+	    text: 'Squirrel Activity Status by Shift'
+        },
+        xAxis: {
+	    categories: ['1','2','3','4','5','6','7','8','9','10']
+        },
+        series: [{
+	    name: 'Running',
+	    data: [233,123],
+        },{
+	    name: 'Not running',
+	    data: [123,333],
+	},{
+	    name: 'Chasing',
+	    data: [220,233],
+	},{
+	    name: 'Not chasing',
+	    data: [239,345],
+	},{
+            name: 'Climbing',
+            data: [300,334],
+        },{
+            name: 'Not climbing',
+            data: [399,23],
+	},{
+            name: 'Eating',
+            data: [444,432],
+	},{
+            name: 'Not eating',
+            data: [440,442],
+        },{
+	    name: 'Foraging',
+            data: [236,222],
+        },{
+            name: 'Not foraging',
+	    data: [223,544]
+	}]
+    });
+  </script>
+</body>
 </html>
