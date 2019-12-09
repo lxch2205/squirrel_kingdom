@@ -7,7 +7,7 @@
 		<div id="container"></div>
 		<script src="http://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>
 		<script>
-			var options = {
+			Highcharts.chart('container',{
 				chart:{
 					type:'bar'
 				},
@@ -62,65 +62,64 @@
 				series:[
 				{
 					name:'gray',
-					data:[{{gray_count}}]
+					data:[300] #{{gray_count}}]
 				},
 				{
 					name:'black',
-					data:[{{black_count}}]
+					data:[267] #{{black_count}}]
 				},
 				{
 					name:'cinnamon',
-					data:[{{cinnamon_count}}]
+					data:[159] #{{cinnamon_count}}]
 				{
 					name:'adult',
-					data:[0,{{adult_count}}]
+					data:[0,245] #{{adult_count}}]
 				},
 				{
 					name:'juvenile',
-					data:[0,{{juvenile_count}}]
+					data:[0,300] #{{juvenile_count}}]
 				},
 				{
 					name:'ground plane',
-					data:[0,0,{{ground_plane_count}}]
+					data:[0,0,256] #{{ground_plane_count}}]
 				},
 				{
 					name:'above ground',
-					data:[0,0,{{above_ground_count}}]
+					data:[0,0,244] #{{above_ground_count}}]
 				},
 				{
 					name:'approaches',
-					data:[0,0,0,{{approaches_count}}]
+					data:[0,0,0,123] #{{approaches_count}}]
 				},
 				{
 					name:'indifferent',
-					data:[0,0,0,{{indifferent_count}}]
+					data:[0,0,0,234] #{{indifferent_count}}]
 				},
 				{
 					name:'runs_from',
-					data:[0,0,0,{{runs_from_count}}]
+					data:[0,0,0,156] #{{runs_from_count}}]
 				},
 				{
 					name:'running',
-					data:[0,0,0,0,{{running_true_count}}]
+					data:[0,0,0,0,234] #{{running_true_count}}]
 				},
 				{
 					name:'chasing',
-					data:[0,0,0,0,{{chasing_true_count}}]
+					data:[0,0,0,0,123] #{{chasing_true_count}}]
 				},
 				{
 					name:'climbing',
-					data:[0,0,0,0,{{climbing_true_count}}]
+					data:[0,0,0,0,234] #{{climbing_true_count}}]
 				},
 				{
 					name:'eating',
-					data:[0,0,0,0,{{eating_true_count}}]
+					data:[0,0,0,0,256] #{{eating_true_count}}]
 				},
 				{
 					name:'foraging',
-					data:[0,0,0,0,{{foraging_true_count}}]
+					data:[0,0,0,0,156] #{{foraging_true_count}}]
 				}]
 		};
-		var chart = Highcharts.chart('container',options);
 		</script>
 	</body>
 </html>
