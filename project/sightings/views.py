@@ -62,7 +62,6 @@ def stats(request):
     foraging_true_count = Squirrel.objects.filter(foraging=True).count(),
     
     context ={
-            'total_squirrels':total_squirrels,
             'gray_count':gray_count,
             'cinnamon_count':cinnamon_count,
             'black_count':black_count,
