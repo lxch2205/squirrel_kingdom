@@ -9,9 +9,9 @@ Function Description:
 - map: randomly plots 100 sightings in our database
 
 - sightings:   
-  lists all sightings in our database  
-  contains links to add a new sighting, view sightings' detials, and update their infomation   
-  shows the dynamic statistics of several squirrels' attributes
+  - lists all sightings in our database  
+  - contains links to add a new sighting, view sightings' detials, and update their infomation   
+  - shows the dynamic statistics of several squirrels' attributes
   
   
   
