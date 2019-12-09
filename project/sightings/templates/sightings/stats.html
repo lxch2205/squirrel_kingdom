@@ -9,44 +9,50 @@
   <script>
     Highcharts.chart('container', {
         chart: {
-            type: 'column'
+            type: 'bar'
         },
         title: {
 	    text: 'Squirrel Activity Status by Shift'
         },
         xAxis: {
-	    categories: ['1','2','3','4','5','6','7','8','9','10']
+	    categories: ['1','2','3','4','5']
         },
+	yAxis: {
+	    title:{
+		text:'population'
+		align:'high'
+	    },
+	},
         series: [{
 	    name: 'Running',
-	    data: [233,123],
+	    data: [231],
         },{
 	    name: 'Not running',
-	    data: [123,333],
+	    data: [123],
 	},{
 	    name: 'Chasing',
-	    data: [220,233],
+	    data: [0,233],
 	},{
 	    name: 'Not chasing',
-	    data: [239,345],
+	    data: [0,345],
 	},{
             name: 'Climbing',
-            data: [300,334],
+            data: [0,0,334],
         },{
             name: 'Not climbing',
-            data: [399,23],
+            data: [0,0,23],
 	},{
             name: 'Eating',
-            data: [444,432],
+            data: [0,0,0,432],
 	},{
             name: 'Not eating',
-            data: [440,442],
+            data: [0,0,0,442],
         },{
 	    name: 'Foraging',
-            data: [236,222],
+            data: [0,0,0,0,222],
         },{
             name: 'Not foraging',
-	    data: [223,544]
+	    data: [0,0,0,0,544]
 	}]
     });
   </script>
