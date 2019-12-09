@@ -10,7 +10,7 @@ Function Description:
 
 - sightings:   
   - lists all sightings in our database  
-  - contains links to add a new sighting, view sightings' detials, and update their infomation   
+  - contains links to add a new sighting, view sightings' details, and update their infomation   
   - shows the dynamic statistics of several squirrels' attributes
   
   
