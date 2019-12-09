@@ -1,44 +1,39 @@
 <html>
    <head>
-      <title>Highcharts Tutorial</title>
-      <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
-      </script>
+      <title>Squirrel Kingdom</title>
       <script src = "https://code.highcharts.com/highcharts.js"></script>  
    </head>
    
    <body>
-      <div id = "container" style = "width: 550px; height: 400px; margin: 0 auto"></div>
-      <script language = "JavaScript">
-         $(document).ready(function() {  
-            var chart = {
+      <div id = "container" ></div>
+      <script>
+         Highcharts.chart('container', {  
+            chart = {
                type: 'bar'
-            };
-            var title = {
-               text: 'Historic World Population by Region'   
-            };
-            var subtitle = {
-               text: 'Source: Wikipedia.org'  
-            };
-            var xAxis = {
-               categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania'],
+            },
+            title = {
+               text: 'Central Park Squirrel Data Summary'   
+            },  
+            xAxis = {
+               categories: ['color','age','location','attitude','activity'],
                title: {
                   text: null
                }
-            };
-            var yAxis = {
+            },
+            yAxis = {
                min: 0,
                title: {
-                  text: 'Population (millions)',
+                  text: 'Population',
                   align: 'high'
                },
                labels: {
                   overflow: 'justify'
                }
-            };
-            var tooltip = {
-               valueSuffix: ' millions'
-            };
-            var plotOptions = {
+            },
+            tooltip = {
+               valueSuffix: 'squirrels'
+            },
+            plotOptions = {
                bar: {
                   dataLabels: {
                      enabled: true
@@ -47,8 +42,8 @@
                series: {
                   stacking: 'normal'
                }
-            };
-            var legend = {
+            },
+            legend = {
                layout: 'vertical',
                align: 'right',
                verticalAlign: 'top',
@@ -61,26 +56,74 @@
                   (Highcharts.theme && Highcharts.theme.legendBackgroundColor)
                   || '#FFFFFF'),
                shadow: true
-            };
-            var credits = {
+            },
+            credits = {
                enabled: false
-            };
-            var series = [
+            },
+            series = [
                {
-                  name: 'Year 1800',
-                  data: [107, 31, 635, 203, 2]
+                  name: 'gray',
+                  data: [107]
                }, 
                {
-                  name: 'Year 1900',
-                  data: [133, 156, 947, 408, 6]
+                  name: 'black',
+                  data: [133]
                }, 
                {
-                  name: 'Year 2008',
-                  data: [973, 914, 4054, 732, 34]      
+                  name: 'cinnamon',
+                  data: [973]      
+               }
+	       {
+                  name: 'adult',
+                  data: [0,507]
+               },
+               {
+                  name: 'juvenile',
+                  data: [0,300]
+               },
+               {
+                  name: 'ground_plane',
+                  data: [0,0,673]
+               }
+	       {
+                  name: 'above ground',
+                  data: [0,0,435]
+               },
+               {
+                  name: 'approaches',
+                  data: [0,0,0,123]
+               },
+               {
+                  name: 'indifferent',
+                  data: [0,0,0,156]
+               }
+	       {
+                  name: 'runs from',
+                  data: [0,0,0,156]
+               }, 
+               {
+                  name: 'running',
+                  data: [0,0,0,0,234]
+               }, 
+               {
+                  name: 'chasing',
+                  data: [0,0,0,0,145]      
+               }
+	       {
+                  name: 'climbing',
+                  data: [0,0,0,0,234]
+               }, 
+               {
+                  name: 'eating',
+                  data: [0,0,0,0,356]
+               }, 
+               {
+                  name: 'foraging',
+                  data: [0,0,0,0,134]      
                }
             ];
       
-            var json = {};   
+            json = {};   
             json.chart = chart; 
             json.title = title;   
             json.subtitle = subtitle; 
@@ -91,7 +134,7 @@
             json.plotOptions = plotOptions;
             json.legend = legend;
             json.credits = credits;
-            $('#container').highcharts(json);
+            ('#container').highcharts(json);
          });
       </script>
    </body>
