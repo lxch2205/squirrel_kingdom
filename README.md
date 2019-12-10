@@ -1,5 +1,5 @@
 # squirrel_kingdom
-E4501 Tools for Analytics 
+E4501 Tools for Analytics   
 Project 67, section 2  
 UNIs: [jm4994, lc3464]  
 
