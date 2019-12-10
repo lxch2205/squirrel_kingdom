@@ -1,6 +1,6 @@
 # squirrel_kingdom
-Group Name: Little New Sheep  
-Group Number: project67, section2  
+E4501 Tools for Analytics 
+Project 67, section 2  
 UNIs: [jm4994, lc3464]  
 
 Link: https://liuxins-project-of-e4501.appspot.com/sightings/
